@@ -1,0 +1,51 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+:root{
+
+  --blue : #4D5B9E;
+  --lavender : #D6DBF5;
+  --celadon : #94D7A2;
+  --misty-rose : #F7D9DB;
+  --marian-blue : #3E4772;
+}
+
+body{
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* ======= Welcome Page ======= */
+
+.welcome-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.title{
+  font-size: 4.5em;
+  letter-spacing: 2px;
+}
+
+.title-headline{
+  font-size: 1.6em;
+  margin-bottom: 2em;
+  letter-spacing: 1px;
+}
+
+.btn{
+  padding: 1.2em 4.8em;
+  background-color: var(--blue);
+  color: white;
+  border-radius: .8em;
+  text-decoration: none;
+  font-size: 1.4em;
+}
+
+.btn:active{
+  box-shadow: inset 1px 4px 4px black;
+}
