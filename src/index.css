@@ -14,6 +14,12 @@
 
 body{
   font-family: 'Montserrat', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-width: 600px;
 }
 
 /* ======= Welcome Page ======= */
@@ -37,6 +43,11 @@ body{
   letter-spacing: 1px;
 }
 
+.title,
+.title-headline{
+  color: var(--marian-blue);
+}
+
 .btn{
   padding: 1.2em 4.8em;
   background-color: var(--blue);
@@ -48,4 +59,90 @@ body{
 
 .btn:active{
   box-shadow: inset 1px 4px 4px black;
+}
+
+
+/* ======= Quiz Page ====== */
+
+.quiz-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+input[type="radio"]{
+  display: none;
+}
+
+label{
+  font-size: 1.2em;
+  padding: .2em 1em;
+  border: 1px solid var(--lavender);
+}
+
+.score{
+  margin-bottom: 1em;
+}
+
+
+/*===== Questions ======  */
+
+.question-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2.4em;
+}
+
+.question-list{
+  margin: .8em 0;
+}
+
+.answer-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.answer-label{
+  margin-right: 1em;
+  padding: 1em;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.answer-label--selected {
+  background-color: var(--lavender);
+}
+
+.answer-label--correct{
+  background-color: var(--celadon);
+}
+
+.answer-label--incorrect{
+  background-color: var(--misty-rose);
+}
+
+.answer-label--unselected{
+  background-color: var(--lavender);
+}
+
+
+/* ===== buttons ===== */
+
+.check-answers-btn,
+.reset-btn{
+  padding: 1.2em 2.4em;
+  background-color: var(--blue);
+  color: white;
+  border: 0;
+  border-radius: 1em;
+  text-decoration: none;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+
+.reset-btn{
+  margin-bottom: 2em;
 }
