@@ -4,6 +4,7 @@ import classNames from "classnames";
 
 export default function Question(props) {
     
+  // selecting a single answer
   function handleClick(id, selectedAnswer) {
     props.setQuestions((prevQuestion) => {
       return prevQuestion.map((question) => {
@@ -16,11 +17,13 @@ export default function Question(props) {
     });
   }
 
+  // To show answers options using input radio.
+
   const answerElement = props.allAnswers.map((ans) => {
     return (
       <>
         <input
-          
+          disabled={!props.GameOver}
           className="answer-item"
           type="radio"
           name={props.questionId}
@@ -29,6 +32,7 @@ export default function Question(props) {
           onChange={() => handleClick(props.questionId, ans.answer)}
         />
         <label
+        // different classnames used to show selected, correct and wrong answers.
           className={classNames(
             "answer-label",
             {
@@ -45,7 +49,7 @@ export default function Question(props) {
             },
             {
               "answer-label--unselected":
-                !props.GameOver &&
+                !props.GameOver && !ans.disabled &&
                 ans.answer !== props.correctAnswer &&
                 ans.answer !== props.selectedAnswer,
             }
