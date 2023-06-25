@@ -10,6 +10,8 @@ export default function Quiz() {
   const [gameOver, setIsGameOver] = useState(true);
   // reset the game
   const [reset, setReset] = useState(false);
+  // loading state to load quiz data
+  const [loading, setLoading] = useState(false);
   let score = 0;
 
   // to check each question for correct answer and update the score
@@ -27,11 +29,12 @@ export default function Quiz() {
 
   useEffect(() => {
     async function getQuiz() {
+      setLoading(true);
       const res = await fetch(
         "https://opentdb.com/api.php?amount=5&category=21&difficulty=medium&type=multiple"
       );
       const data = await res.json();
-
+      setLoading(false);
       setQuestions(
         data.results.map((question) => {
           const questionn = question.question;
@@ -85,29 +88,33 @@ export default function Quiz() {
 
   return (
     <>
-      <div className="quiz-container">
-        <div className="question-container">{quizElement}</div>
-        {gameOver && (
-          <button
-            disabled={!disableBtn}
-            className="check-answers-btn"
-            onClick={checkAnswers}
-            type="submit"
-          >
-            {disableBtn ? "Check Answers" : "Select your Answers"}
-          </button>
-        )}
-        {!gameOver && (
-          <h2 className="score">
-            You Scored {score} / {questions.length}
-          </h2>
-        )}
-        {!gameOver && (
-          <button className="reset-btn" onClick={resetGame}>
-            {score === questions.length ? "New Game😄" : "Play Again😟"}
-          </button>
-        )}
-      </div>
+      {loading ? (
+        <h2 className="loading">Loading 😅...</h2>
+      ) : (
+        <div className="quiz-container">
+          <div className="question-container">{quizElement}</div>
+          {gameOver && (
+            <button
+              disabled={!disableBtn}
+              className="check-answers-btn"
+              onClick={checkAnswers}
+              type="submit"
+            >
+              {disableBtn ? "Check Answers" : "Select your Answers"}
+            </button>
+          )}
+          {!gameOver && (
+            <h2 className="score">
+              You Scored {score} / {questions.length}
+            </h2>
+          )}
+          {!gameOver && (
+            <button className="reset-btn" onClick={resetGame}>
+              {score === questions.length ? "New Game😄" : "Play Again😟"}
+            </button>
+          )}
+        </div>
+      )}
     </>
   );
 }
