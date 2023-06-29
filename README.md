@@ -12,7 +12,17 @@ A Fun Quiz App to test your knowledge made with the concepts of React.js and Rea
 
 ## Screenshot
 
+### Welcome Page
 
+<p align="center"><img width="750px" src="./src/assets/images/screenshot1.png" /></p>
+
+### Quiz Page
+
+<p align="center"><img width="650px" src="./src/assets/images/screenshot2.png" /></p>
+
+### Result Page
+
+<p align="center"><img width="650px" src="./src/assets/images/screenshot3.png" /></p>
 
 ## Technologies I Used
 
