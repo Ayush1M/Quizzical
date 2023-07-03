@@ -5,6 +5,7 @@
  * [Overview of the Project](#overview-of-the-project)
       * [Screenshot](#screenshot)
  * [Technologies I Used](#technologies-i-used)
+ * [Whats the Approach?](#whats-the-approach)
  
 # Overview of the Project
 
@@ -27,4 +28,8 @@ A Fun Quiz App to test your knowledge made with the concepts of React.js and Rea
 ## Technologies I Used
 
 * React
+
+## Whats the Approach?
+
+- First I Fetched the quiz data from the Open trivia Database and map over the questions and answers to display it on the screen.
  
